@@ -5,9 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>What is My IP Address</title>
-    <link href="https://cdn.jsdelivr.net/npm/normalize-css@2.3.1/normalize.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
-    <link rel="icon" type="image/png" sizes="16x16" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAMAAAD04JH5AAAAeFBMVEUAAAARltsSldkQk9sSl9sSltoTldsSltwSltwSltwRltsTltsSltsRl9sSltsRlt0SltsSl9sSldsQltkSldwSl9sSltsSltsTltwQltoRltwTl9wTldwRl9wSmNsXl9wSldoTltkSl9wRltsSldwRltsMkNMSlts4wY/mAAAAJ3RSTlMAv4BA5WAa7tnDVrOrzVwO3rhjLiX5pY1NPJJRQoI5FsGInml2lgX0j+4HAAADZklEQVR42uzXW5KqUAyF4YVyVW6KKHhttTXzn+E5Vfqy3TQBEnjyG0DzVxckEV9fX1+D+LV32kZJ6AZlGbhhEm1PXu1jGv7iFlCj4LYYPaKYOdTKmRUYTeYtqYOll2EM571LHbn7M7RVMfUSV9C0/qHeftbQclzRIKsjNFx2NNjuArE0JIEwhdCVhK6Q2CxJbLnBYIecFOQHDHQnJXcMMiM1M+nz5QXS509fkJKyFL0sSN1C8PzJCw40igM62uQ0inyDbqz5mzxmAzwSayoP2j/5IcNA2ecsvw74AGOIxL0/xou5/48QOpr3wQUc8/75hdiveSP1C3agwOn1L10xe1S81VfM/U2GGgpqMqzRxrz/yycUPEvz9wJaVGRIoCIhQ9X9q3Wgwuk8Wc40RQCd8Zf9NAF7/CFzpwlwMzTziA1w6GVu//HSzZPoNH/yAeQxa7hngMndX9iAJRoVNCjAEqZcABXMIS4KsFeY0/FIj9QCyGMCIjTwSS+AivYA8mFbawbsmIA1bLFmQOC3B8SwBaKA1z1f3eht0R4QwOKTLODt0fCeO9TlJailAeYw2TIBtT2HdQIyelkxAfY0PkkDzI1+YwJO+LTVCYg6vgNbew7KAub/VfdHTm8FExAxh5t0DkRgAhJ8ClUDUi4gxCdXMyAGF+Ayg1AWkGRsgD0KS72A2wZsQDleQPyvfbPbQRCGoXBDYMr8BYwgMdHoxd7/Db3x7kQ7re2G4bsm5CSwtmtPT0QRAnQ+wb4ZBwLiPkEpjwMdVMSf/IRLoQACPjyGG1sBGIhqWwE1JiNbAUdMx7YCMB1XtgIqLMlsBWBJ5mwFOAIWlgIWhNwsBdwI8ZYCfOzlVAJ/OcXn5AIkLy50BfANis5OQBfZpCrpJ5SxsyOMxgf6AQcmDkOjEk6LEB9iG5U0YtKUg4l+ZJrVejMjbFbzfSIS8+bahAxYOu1IxA5LvYEZ2eAvK6AKwJUZWiFN7913zse+CUjLje2UadjBpTJnfnSrSh8zvFZkeTH1zyBboYHOyFq3CkqspmJiSW7jIboHBe7WVjYsRJMqKKZm54OApB6AEK9lpLNX4Kdq601vbE5v7c7A3J7e3p9+wSGDFY8MllwyWPPJYNHpuepVh7fURUfKuHb9atlt3Tp6zd+s+83MzPwbD5YeuuVggzJ1AAAAAElFTkSuQmCC" />
+    <link href="https://cdn.bootcdn.net/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAMAAAD04JH5AAAAeFBMVEUAAAARltsSldkQk9sSl9sSltoTldsSltwSltwSltwRltsTltsSltsRl9sSltsRlt0SltsSl9sSldsQltkSldwSl9sSltsSltsTltwQltoRltwTl9wTldwRl9wSmNsXl9wSldoTltkSl9wRltsSldwRltsMkNMSlts4wY/mAAAAJ3RSTlMAv4BA5WAa7tnDVrOrzVwO3rhjLiX5pY1NPJJRQoI5FsGInml2lgX0j+4HAAADZklEQVR42uzXW5KqUAyF4YVyVW6KKHhttTXzn+E5Vfqy3TQBEnjyG0DzVxckEV9fX1+D+LV32kZJ6AZlGbhhEm1PXu1jGv7iFlCj4LYYPaKYOdTKmRUYTeYtqYOll2EM571LHbn7M7RVMfUSV9C0/qHeftbQclzRIKsjNFx2NNjuArE0JIEwhdCVhK6Q2CxJbLnBYIecFOQHDHQnJXcMMiM1M+nz5QXS509fkJKyFL0sSN1C8PzJCw40igM62uQ0inyDbqz5mzxmAzwSayoP2j/5IcNA2ecsvw74AGOIxL0/xou5/48QOpr3wQUc8/75hdiveSP1C3agwOn1L10xe1S81VfM/U2GGgpqMqzRxrz/yycUPEvz9wJaVGRIoCIhQ9X9q3Wgwuk8Wc40RQCd8Zf9NAF7/CFzpwlwMzTziA1w6GVu//HSzZPoNH/yAeQxa7hngMndX9iAJRoVNCjAEqZcABXMIS4KsFeY0/FIj9QCyGMCIjTwSS+AivYA8mFbawbsmIA1bLFmQOC3B8SwBaKA1z1f3eht0R4QwOKTLODt0fCeO9TlJailAeYw2TIBtT2HdQIyelkxAfY0PkkDzI1+YwJO+LTVCYg6vgNbew7KAub/VfdHTm8FExAxh5t0DkRgAhJ8ClUDUi4gxCdXMyAGF+Ayg1AWkGRsgD0KS72A2wZsQDleQPyvfbPbQRCGoXBDYMr8BYwgMdHoxd7/Db3x7kQ7re2G4bsm5CSwtmtPT0QRAnQ+wb4ZBwLiPkEpjwMdVMSf/IRLoQACPjyGG1sBGIhqWwE1JiNbAUdMx7YCMB1XtgIqLMlsBWBJ5mwFOAIWlgIWhNwsBdwI8ZYCfOzlVAJ/OcXn5AIkLy50BfANis5OQBfZpCrpJ5SxsyOMxgf6AQcmDkOjEk6LEB9iG5U0YtKUg4l+ZJrVejMjbFbzfSIS8+bahAxYOu1IxA5LvYEZ2eAvK6AKwJUZWiFN7913zse+CUjLje2UadjBpTJnfnSrSh8zvFZkeTH1zyBboYHOyFq3CkqspmJiSW7jIboHBe7WVjYsRJMqKKZm54OApB6AEK9lpLNX4Kdq601vbE5v7c7A3J7e3p9+wSGDFY8MllwyWPPJYNHpuepVh7fURUfKuHb9atlt3Tp6zd+s+83MzPwbD5YeuuVggzJ1AAAAAElFTkSuQmCC" />
 </head>
 
 <body>
@@ -56,7 +57,7 @@
         <div class="col-md-1"></div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.12.1/jquery.min.js"></script>
     <script>
         function fetchJson(url) {
             return fetch(url).then(res => {

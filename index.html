@@ -16,15 +16,21 @@
         <div class="col-md-1"></div>
         <div class="col-md-10">
             <table class="table table-striped" style="width: 100%;">
-                <tr class="baidu">
-                    <td width="60px">国内</td>
-                    <td width="60px">百度</td>
-                    <td><span class="ip"></span></td>
-                    <td><span class="isp"></span></td>
-                </tr>
                 <tr class="taobao">
                     <td width="60px">国内</td>
                     <td width="60px">淘宝</td>
+                    <td><span class="ip"></span></td>
+                    <td><span class="isp"></span></td>
+                </tr>
+                <tr class="api345">
+                    <td width="60px">国内</td>
+                    <td width="60px">345API</td>
+                    <td><span class="ip"></span></td>
+                    <td><span class="isp"></span></td>
+                </tr>
+                <tr class="baidu">
+                    <td width="60px">国内</td>
+                    <td width="60px">百度</td>
                     <td><span class="ip"></span></td>
                     <td><span class="isp"></span></td>
                 </tr>
@@ -72,9 +78,19 @@
             return [country, region, city, isp].filter(val => !!val).join(', ')
         }
         function getIpInfo(ip) {
-            return fetchJson('https://qifu-api.baidubce.com/ip/geo/v1/district?ip=' + ip).then(data => {
-                console.log(data);
-                return area(data.data.country, data.data.prov, data.data.city, data.data.isp);
+            return fetchJson(`http://ip-api.com/json/${ip}?lang=zh-CN`).then(data => {
+                let isp = data.as;
+
+                if (isp.toLowerCase().indexOf('china telecom') > -1 && isp.indexOf('电信') === -1) {
+                   isp = `电信 ${isp}`
+                }
+                if (isp.toLowerCase().indexOf('china unicom') > -1 && isp.indexOf('联通') === -1) {
+                   isp = `联通 ${isp}`
+                }
+                if (isp.toLowerCase().indexOf('china mobile') > -1 && isp.indexOf('移动') === -1) {
+                   isp = `移动 ${isp}`
+                }
+                return area(data.country, data.regionName, data.city, isp);
             })
         }
         function getIpInfo2(ip) {
@@ -106,6 +122,9 @@
         function getBaiduIp() {
             return fetchJson(`https://qifu-api.baidubce.com/ip/local/geo/v1/district`)
         }
+        function get345ApiIp() {
+            return fetchJson(`https://www.345api.cn/api/ipv2/query`)
+        }
 
         function getIpSb() {
             return fetchJson(`https://api-ipv4.ip.sb/geoip`)
@@ -130,8 +149,15 @@
                 showHtml('st', ip, txt);
             })
 
+            get345ApiIp().then(data => {
+                const ip = data.user_ip;
+                getIpInfo(ip).then(txt => {
+                    showHtml('api345', ip, txt);
+                })
+            })
+
             getBaiduIp().then((data) => {
-                const ip = data.ip;
+                const ip = data.ip || '获取失败';
                 const txt = area(data.data.country, data.data.prov, data.data.city, data.data.isp)
                 showHtml('baidu', ip, txt);
             });
